@@ -1,0 +1,7 @@
+ami = "ami-01ed306a12b7d1c96"
+instance_type = "t2.micro"
+subnet_id = "subnet-3a604771"
+instance_profile_name = "jenkins"
+role_name             = "terraform"
+key_name   = "khuslen-gitbash"
+vpc_id = "vpc-064fe67e"

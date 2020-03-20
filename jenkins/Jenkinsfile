@@ -1,0 +1,12 @@
+node {
+  stage 'Checkout'
+  git 'git@github.com:KhuslenS/AkumoSolutions.git'
+ 
+  stage 'Docker build'
+  docker.build('demo')
+ 
+  stage 'Docker push'
+  docker.withRegistry('https://055670655228.dkr.ecr.us-west-2.amazonaws.com', 'ecr:us-west-2:ecs-agent') {
+    docker.image('demo').push('latest')
+  }
+}
