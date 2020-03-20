@@ -17,7 +17,7 @@ resource "aws_cloudfront_distribution" "demo" {
     origin_id   = local.s3_origin_id
   }
 
-  enabled             = true
+  enabled             = false
   default_root_object = "index.html"
 
   // All values are defaults from the AWS console.
