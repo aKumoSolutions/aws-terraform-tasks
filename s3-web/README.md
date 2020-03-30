@@ -51,8 +51,12 @@
     - Validates cert by DNS (Route 53)
 
 3. CloudFront
-    - 
-    - 
+    - Custom origin from S3 bucket
+    - Index.html is default root object
+    - Uses default values from AWS
+    - ACM is loaded as a SSL cert
 
-3. Route53 
-    - 
+3. Route53
+    - A record (alias) for CloudFront 
+    - ACM cert validation by route53
+    - CNAME record for ACM  
