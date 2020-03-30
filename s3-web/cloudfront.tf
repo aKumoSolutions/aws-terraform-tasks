@@ -53,7 +53,5 @@ resource "aws_cloudfront_distribution" "demo" {
   }
   // Here is depends_on function from terraform, We are saying that "if certificate does not exist, it will not create Cloudfront"
   // Otherwise our code will stop or fail.
-  depends_on = [
-    aws_acm_certificate.cert
-  ]
+  depends_on = ["aws_acm_certificate.cert"]
 }
