@@ -15,7 +15,8 @@
         - Create/Edit EC2 
         - Create/Edit Load Balancer
         - Create/Edit Auto-Scaling
-        - Create/Edit VPC
+        - Create/Edit VP
+        - Existing key-pair and image
 
 ## Solution 
 
