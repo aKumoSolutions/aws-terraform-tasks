@@ -55,3 +55,6 @@
     - Targeting auto scaling group
     - Default action type is forward
     - LB listener is in port 80 and protocol HTTP
+4. EC2
+    - Security Group (all the necessary ports are open)
+    - Apache is installed (ready to serve index.html)
