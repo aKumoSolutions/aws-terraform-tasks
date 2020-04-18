@@ -1,4 +1,6 @@
-data "aws_subnet_ids" "all" {}
+data "aws_subnet_ids" "all" {
+  vpc_id = aws_vpc_id.demo.id
+}
 
 resource "aws_lb" "demo" {
   name = "elb-demo"
