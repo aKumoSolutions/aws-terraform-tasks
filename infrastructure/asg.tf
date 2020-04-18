@@ -1,3 +1,5 @@
+data "aws_availability_zones" "all" {}
+
 resource "aws_launch_configuration" "demo" {
   name_prefix   = var.name_prefix
   image_id      = var.image_id
@@ -14,7 +16,7 @@ resource "aws_autoscaling_group" "demo" {
   min_size           = 1
   health_check_type  = "ELB"
   launch_configuration = aws_launch_configuration.demo.id
-  vpc_zone_identifier = [aws_subnet.public-a.id, aws_subnet.private-a.id]
+  vpc_zone_identifier = [aws_availability_zones.all.names]
 }
 
 
