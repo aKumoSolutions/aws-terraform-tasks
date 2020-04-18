@@ -1,5 +1,3 @@
-data "aws_subnet_ids" "all" {}
-
 resource "aws_launch_configuration" "demo" {
   name_prefix   = var.name_prefix
   image_id      = var.image_id
