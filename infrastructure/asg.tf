@@ -5,7 +5,6 @@ resource "aws_launch_configuration" "demo" {
   user_data     = file("userdata.sh")
   security_groups = [aws_security_group.asg.id]
   key_name       = var.key_name
-  target_group_arns  = [aws_lb_target_group.demo.arn]
   
 }
 
