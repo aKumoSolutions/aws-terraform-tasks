@@ -14,7 +14,7 @@ resource "aws_autoscaling_group" "demo" {
   min_size           = 1
   health_check_type  = "ELB"
   launch_configuration = aws_launch_configuration.demo.id
-  vpc_zone_identifier = [aws_subnet.private-a, aws_subnet.public-a]
+  vpc_zone_identifier = ["aws_subnet.private-a, aws_subnet.public-a"]
 }
 
 
