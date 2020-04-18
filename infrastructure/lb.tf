@@ -7,7 +7,7 @@ resource "aws_lb" "demo" {
   load_balancer_type = "application"
   security_groups = [aws_security_group.elb.id]
   // subnets =[aws_subnet.public-a.id, aws_subnet.private-a.id]
-  subnets = [aws_subnet_ids.all.ids]
+  subnets = [aws_subnet.private-a, aws_subnet.public-a]
 }
 
 resource "aws_lb_target_group" "demo" {
