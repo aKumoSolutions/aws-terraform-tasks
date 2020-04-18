@@ -1,13 +1,10 @@
-data "aws_subnet_ids" "all" {
-  vpc_id = aws_vpc.demo.id
-}
 
 resource "aws_lb" "demo" {
   name = "elb-demo"
   load_balancer_type = "application"
   security_groups = [aws_security_group.elb.id]
   // subnets =[aws_subnet.public-a.id, aws_subnet.private-a.id]
-  subnets = ["aws_subnet.private-a, aws_subnet.public-a"]
+  subnets = [aws_subnet.private-a.id, aws_subnet.public-a.id]
 }
 
 resource "aws_lb_target_group" "demo" {

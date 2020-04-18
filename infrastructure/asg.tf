@@ -5,6 +5,7 @@ resource "aws_launch_configuration" "demo" {
   user_data     = file("userdata.sh")
   security_groups = [aws_security_group.asg.id]
   key_name       = var.key_name
+  load_balancers  = [aws_lb.demo.id]
   
 }
 
@@ -14,7 +15,7 @@ resource "aws_autoscaling_group" "demo" {
   min_size           = 1
   health_check_type  = "ELB"
   launch_configuration = aws_launch_configuration.demo.id
-  vpc_zone_identifier = ["aws_subnet.private-a, aws_subnet.public-a"]
+  vpc_zone_identifier = [aws_subnet.private-a.id, aws_subnet.public-a.id]
 }
 
 
