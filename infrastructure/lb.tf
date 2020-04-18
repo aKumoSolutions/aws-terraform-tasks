@@ -1,5 +1,5 @@
 data "aws_subnet_ids" "all" {
-  vpc_id = aws_vpc_id.demo.id
+  vpc_id = aws_vpc.demo.id
 }
 
 resource "aws_lb" "demo" {
