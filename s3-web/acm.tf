@@ -16,9 +16,11 @@ data "aws_route53_zone" "zone" {
 
 
 resource "aws_acm_certificate_validation" "cert" {
-// In here, we are validating our certification in Route53
-  certificate_arn         = aws_acm_certificate.cert.arn
-  validation_record_fqdns = [aws_route53_record.cert_validation.fqdn]
+  certificate_arn = aws_acm_certificate.cert.arn
+  validation_record_fqdns = [
+    "aws_route53_record.cert_validation.fqdn",
+    "aws_route53_record.cert_validation_alt1.fqdn"
+  ]
 }
 
 # https://aws.amazon.com/premiumsupport/knowledge-center/cloudfront-invalid-viewer-certificate/
