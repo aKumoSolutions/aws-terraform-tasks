@@ -3,7 +3,7 @@
 resource "aws_acm_certificate" "cert" {
 // It called a wildcard cert, so we can host subdomains later.
   domain_name       = var.root_domain_name
-  subject_alternative_names = var.domain_name
+  subject_alternative_names = [var.domain_name]
   validation_method = "DNS"
 
 }
