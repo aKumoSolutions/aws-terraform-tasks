@@ -24,3 +24,8 @@ resource "aws_route53_record" "cert_validation_alt1" {
   records = [aws_acm_certificate.cert.domain_validation_options.1.resource_record_value]
   ttl     = 60
 }
+
+data "aws_route53_zone" "zone" {
+  name         = var.root_domain_name
+  private_zone = false
+}
