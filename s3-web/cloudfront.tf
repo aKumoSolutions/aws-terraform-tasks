@@ -39,7 +39,7 @@ resource "aws_cloudfront_distribution" "demo" {
     }
   }
   // Here we are ensuring we can hit this distribution using domain_name rather than the domain name CloudFront gives.
-  aliases = [ var.root_domain_name ] 
+  aliases = [ "var.root_domain_name", "var.domain_name" ] 
 
   restrictions {
     geo_restriction {
